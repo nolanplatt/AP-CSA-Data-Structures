@@ -1,9 +1,8 @@
-# AP-CSA-T3-Individual
-APCSA T3 Individual Repository
+# AP-CSA-T3-Individual - Data Structures
 
 
-[Main Repl.it (for every Challenge Week)](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
+[Repl.it](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
 
 
-Repl.it for every week
+# Repl.it by week
 ### [Challenge 0](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
