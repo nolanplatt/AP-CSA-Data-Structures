@@ -1,4 +1,6 @@
 ---
-layout: home
+layout: default
+permalink: /
 ---
 {% include navigation.md %}
+test
