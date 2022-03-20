@@ -6,4 +6,4 @@ APCSA T3 Individual Repository
 
 
 Repl.it for every week
-### [Challenge 0] (https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
+### [Challenge 0](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
