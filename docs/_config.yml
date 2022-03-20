@@ -26,7 +26,7 @@ url: "https://nolanplatt.github.io" # the base hostname & protocol for your site
 github_username:  nolanplatt
 
 # Build settings
-theme: minmima
+theme: minima
 plugins:
   - jekyll-feed
 
