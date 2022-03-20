@@ -10,6 +10,7 @@ permalink: /datastructures
 * [Code Snippet(s)]()
 * [Replit Runtime]()
 * [Review Issue]()
+
 ### **Week 0**
 * [Problem Solutions](https://github.com/nolanplatt/AP-CSA-Data-Structures/tree/main/challenge0)
 * [Code Snippet(s)](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge0/imports/Swap.java#L8-L24)

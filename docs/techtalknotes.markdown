@@ -7,7 +7,31 @@ permalink: /techtalknotes
 
 
 ## **Tech Talk 3 | Sorts**
-
+* CB-level Sorts that need to be familiar w/  → Bubble Sort, Selection Sort, Insertion Sort
+ → need to build Merge Sort using a data structure that "supports binary analysis"
+* Need to build Wiki to show complex understanding of "Big O" notation 
+ → need to implement this into project somehow
+ → need to create analytical tracker to show which sort has best swap avg. 
+  → run at least 10 times
+   → calculate an average for each
+* Also, need to establish timer
+  → calc. average time for each sort
+* After all this  → give conclusion on which sort is the best for loading different Data Structures
+  → should decide this by using all of the following *comparisions, swaps, big o complexity, and time (nanoseconds)*
+* Timing example (see code on J. Mortensen's TT3: Sorts):
+```
+Nanoseconds: 7356000
+Nanoseconds: 3186000
+Nanoseconds: 1808000
+Nanoseconds: 1625000
+Nanoseconds: 1585000
+Nanoseconds: 1593000
+Nanoseconds: 1627000
+Nanoseconds: 1595000
+Nanoseconds: 1624000
+Nanoseconds: 1603000
+Average    : 2360200
+```
 
 ## **Tech Talk 2 | Calculator**
 * Mathematical expression→ "finite combination of symbols that is well-formed according to rules that depend on the context"
