@@ -5,10 +5,10 @@ permalink: /tpt
 {% include navigation.md %}
 # Test Prep (TPT) Plan
 
-### Studying
+## Studying
 
 
-### Being Organized
+## Being Organized
 
 
-### Hands-on Learning
+## Hands-on Learning
