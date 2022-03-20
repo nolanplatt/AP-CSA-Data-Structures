@@ -1,4 +1,4 @@
 ---
-{% include navigation.md %}
 layout: home
 ---
+{% include navigation.md %}
