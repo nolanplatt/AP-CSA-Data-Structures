@@ -1,7 +1,7 @@
 package challenge0;
 
 /*
-Creator: Nolan PlaTT
+Creator: Nolan Platt
 Mini Lab Name: Data Structures Challenge 0 (TT0)
 */
 
@@ -13,7 +13,7 @@ import challenge0.imports.Swap;
 import challenge0.imports.Matrix;
 
 
-public class Main {   
+public class Challenge0 {   
 
      static public void main(String[] args)  { 
         ArrayList<String> submenus;

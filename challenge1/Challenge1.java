@@ -18,7 +18,7 @@ import javax.swing.text.html.HTMLDocument.Iterator;
 public class Challenge1 {
     static Queue<String> q;
 
-    Challenge1() {
+    public Challenge1() {
         
     }
     public static void main(String[] args)  { 
@@ -128,6 +128,7 @@ public class Challenge1 {
             }
 
             System.out.println(sortedQueue);
+            menu(submenus);
 
         } else if (option == 5) { // Using Stack to Reverse Order of a Queue
             Queue<Integer> q = new LinkedList<>(); // intiialize Queue 
@@ -146,7 +147,8 @@ public class Challenge1 {
                 q.add(reversedStack.pop());
             }
             System.out.println(q); // print queue
-            
+            menu(submenus);
+
         } else { // Exit
             System.exit(0);
         }
