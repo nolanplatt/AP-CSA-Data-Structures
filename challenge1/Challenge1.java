@@ -15,10 +15,10 @@ import java.util.Stack;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
 
-public class Main {
+public class Challenge1 {
     static Queue<String> q;
 
-    Main() {
+    Challenge1() {
         
     }
     public static void main(String[] args)  { 

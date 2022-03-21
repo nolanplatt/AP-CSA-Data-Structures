@@ -1,5 +1,5 @@
 package challenge2;
 
-public class Main {
+public class Challenge2 {
     
 }
