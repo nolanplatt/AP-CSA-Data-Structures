@@ -1,3 +1,5 @@
+package challenge0;
+
 /*
 Creator: Nolan PlaTT
 Mini Lab Name: Data Structures Challenge 0 (TT0)
@@ -6,8 +8,10 @@ Mini Lab Name: Data Structures Challenge 0 (TT0)
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import imports.Swap;
-import imports.Matrix;
+
+import challenge0.imports.Swap;
+import challenge0.imports.Matrix;
+
 
 public class Main {   
 
