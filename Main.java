@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import challenge0.Challenge0;
 import challenge1.Challenge1;
+import challenge2.Challenge2;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ public class Main {
         System.out.println("-------------------------\n");
         System.out.println("1 - Challenge 0");
         System.out.println("2 - Challenge 1");
-        System.out.println("3 - Exit");
+        System.out.println("3 - Challenge 2");
+        System.out.println("4 - Exit");
 
 
         int option;
@@ -24,7 +26,11 @@ public class Main {
         } else if (option == 2) {
             Challenge1 challenge1 = new Challenge1();
             challenge1.main(args);
-        }  else {
+        } else if (option == 3) {
+            Challenge2 challenge2 = new Challenge2();
+            challenge2.main(args);
+        } 
+         else {
             System.exit(0);
         }
 

@@ -2,6 +2,7 @@ package challenge2.imports;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Stack;
 
@@ -11,7 +12,7 @@ import java.util.Stack;
  * @author  Nolan Platt (github.com/nolanplatt)
  */
 
- 
+
 public class Calculator {
     
     String input;
@@ -28,7 +29,7 @@ public class Calculator {
          OPERATORS.put("+", 4);
          OPERATORS.put("-", 4);
          OPERATORS.put("^", 2); // assignment (for credit)
-         OPERATORS.put("SQRT", 2); //extra credit SQRT()
+         OPERATORS.put("SQRT", 1); //extra credit SQRT() function via possible Pythagoras expression
      }
 
       // Helper definition for supported operators
@@ -79,6 +80,7 @@ public class Calculator {
         this.rpn = new ArrayList<>();
 
         // stack is used to reorder for appropriate grouping and precedence
+
         Stack tokenStack = new Stack();
         for (String token : tokenList) {
             switch (token) {
@@ -98,10 +100,13 @@ public class Calculator {
                 case "*":
                 case "/":
                 case "%":
+                case "^":
+                case "SQRT":
+
                     // While stack
                     // not empty AND stack top element
                     // and is an operator
-                    while (tokenStack.peek() != null && isOperator((String) tokenStack.peek()))
+                    while (tokenStack.peek() != null && tokenStack.size() > 0 && isOperator((String) tokenStack.peek()))
                     {
                         if ( isPrecedent(token, (String) tokenStack.peek() )) {
                             rpn.add((String)tokenStack.pop());
@@ -117,7 +122,7 @@ public class Calculator {
             }
         }
         // Empty remaining tokens
-        while (tokenStack.peek() != null) {
+        while ( tokenStack.size() > 0 && tokenStack.peek() != null) {
             rpn.add((String)tokenStack.pop());
         }
 
@@ -158,26 +163,63 @@ public class Calculator {
     }
 
         // Takes RPN and produces a final result
-        private void rpnToResult(){
+
+        private void rpnToResult(){  // @assignment - @author Nolan Platt
+            Stack calculation;
+            calculation  = new Stack();
+            
             // Stack used to hold calculation while process RPN
-            Stack calculation = new Stack();
+            
     
-            // for loop to process RPN
-            {
-                // If the token is a number
-                {
-                    // Push number to stack
-                }
-                // else
-                {
-                    // Pop the two top entries
-    
-                    // Based off of Token operator calculate result
-    
-                    // Push result back onto the stack
-                }
+            // Declared peeks (via Stack)
+            Object initialPeek = null;
+            Object secondaryPeek  = null;
+
+
+            for(int i = 0; i < rpn.size(); i++) {  // for loop to process RPN
+               if(!(OPERATORS.containsKey(rpn.get(i)))) { // If the token is a number
+                    // → essentially, we check if the key contaiints one of our operators that we declared.
+                        // → if not (!),  we continue forward assuming (knowing) the token is a number.
+                    calculation.push(Double.parseDouble(rpn.get(i))); //  Push parsed value to Stack.
+               } else { // Not a number →
+                    if(OPERATORS.get(rpn.get(i)) == 1 ) { // SQRT (1) function check
+                        initialPeek = calculation.peek();  // set initialPeek equal to 1st peek (stack location = 0) from Calculation stack
+                        calculation.pop();  // remove initialPeek'ed object from Stack
+                    } else if(OPERATORS.get(rpn.get(i)) > 1) { // If NOT SQRT ( > 1)
+                       // INITIAL PEEK
+                        initialPeek = calculation.peek(); // set initialPeek equal to 1st peek (stack location = 0) from Calculation stack
+                        calculation.pop(); // remove initialPeek'ed object from Stack
+
+                        //  SECONDARY PEEK
+                        secondaryPeek = calculation.peek(); // set secondaryPeek equal to 2nd peek (stack location = 1) from Calculation stack
+                        calculation.pop(); // remove secondaryPeek'ed object from Stack
+
+                    }
+
+                    Double convertedInitialPeek = (Double)(initialPeek);
+                   Double convertedSecondaryPeek = (Double)(secondaryPeek);
+                  
+                if(rpn.get(i).equals("+")) {
+                    calculation.push((convertedInitialPeek) + (convertedSecondaryPeek));  //  need to cast to Double to add
+                } else if (rpn.get(i).equals("-"))   {
+                    calculation.push((convertedSecondaryPeek) - (convertedInitialPeek));  //  need to cast to Double to subtract
+                } else if (rpn.get(i).equals("*")) {
+                    calculation.push((convertedInitialPeek) * (convertedSecondaryPeek));  //  need to cast to Double to multiply
+               } else if (rpn.get(i).equals("/")) {
+                    calculation.push((convertedSecondaryPeek) / (convertedInitialPeek));  //  need to cast to Double to divide
+               } else if (rpn.get(i).equals("%")) {  //  need to cast to Double to modulo
+                calculation.push((convertedSecondaryPeek) % (convertedInitialPeek));  //  need to cast to Double to divide
+               } else if (rpn.get(i).equals("^")) {
+                calculation.push(Math.pow(convertedSecondaryPeek, convertedInitialPeek));
+               } else if (rpn.get(i).equals("SQRT")) {
+                calculation.push(Math.sqrt(convertedInitialPeek));
+               }
+               
             }
-            // Pop final result and set as final result for expression
+          
+        }
+        output = (Double) calculation.peek();
+        calculation.pop();
         }
 
 
