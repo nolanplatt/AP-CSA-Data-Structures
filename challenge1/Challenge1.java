@@ -7,6 +7,10 @@ Build Stack and reverse Queue Order
 */
 package challenge1;
 
+/**
+ * Data Structure Challenge 1
+ * @author  Nolan Platt
+ */
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;

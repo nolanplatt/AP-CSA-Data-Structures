@@ -1,10 +1,9 @@
 package challenge0;
 
-/*
-Creator: Nolan Platt
-Mini Lab Name: Data Structures Challenge 0 (TT0)
-*/
-
+/**
+ * Data Structure Challenge 0 
+ * @author  Nolan Platt
+ */
 
 import java.util.ArrayList;
 import java.util.Scanner;
