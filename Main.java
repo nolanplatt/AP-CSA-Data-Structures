@@ -3,6 +3,7 @@ import java.util.Scanner;
 import challenge0.Challenge0;
 import challenge1.Challenge1;
 import challenge2.Challenge2;
+import challenge3.Challenge3;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class Main {
         System.out.println("1 - Challenge 0");
         System.out.println("2 - Challenge 1");
         System.out.println("3 - Challenge 2");
+        System.out.println("4 - Challenge 3");
         System.out.println("4 - Exit");
 
 
@@ -29,6 +31,9 @@ public class Main {
         } else if (option == 3) {
             Challenge2 challenge2 = new Challenge2();
             challenge2.main(args);
+        }  else if (option == 4) {
+            Challenge3 challenge3 = new Challenge3();
+            challenge3.main(args);
         } 
          else {
             System.exit(0);
