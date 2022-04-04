@@ -17,7 +17,7 @@ public class Main {
         System.out.println("2 - Challenge 1");
         System.out.println("3 - Challenge 2");
         System.out.println("4 - Challenge 3");
-        System.out.println("4 - Exit");
+        System.out.println("5 - Exit");
 
 
         int option;
