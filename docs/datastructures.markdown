@@ -5,6 +5,44 @@ permalink: /datastructures
 {% include navigation.md %}
 # Data Structures 
 
+### **Week 3**
+* [Problem Solutions 1](https://github.com/nolanplatt/AP-CSA-Data-Structures/tree/main/challenge3)
+* Code Snippets:
+   * [Snippet 1](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge3/imports/AdvancedArrayList.java#L50-L56)
+   * [Snippet 2](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge3/Challenge3.java#L138-L146)
+   * [Snippet 3](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge3/Challenge3.java#L241-L259)
+   * [Snippet 4](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge3/Challenge3.java#L319-L330)
+* [Replit Runtime](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge3/Challenge3.java)
+* [Review Issue](https://github.com/rpeddakama/AP-CSA-T3/issues/34)
+
+*  Key Learnings in Week 3:
+Before I dive into what the analytical analysis of the sorts, I'd like to explain what I learned in week three. During week three, we deeply explored sort algorithms, with notations and methods that go along with it. This includes big O notations (AKA O(n)). I will give a rundown of each sort we went into explciitly:
+1. Bubble Sort
+- Each element compared with one another - very slow. Does this until each element is in correct order. Uses nested for loop. Big O notation: O(n*n)
+2. Merge Sort
+- Fastest algorithm (of these four) by far. Splits data structure up multiple times, compares those, and then combines at the end. A "divide and conquer" mindset here. Big O notation involves logarithmic - O(nlogn)
+3. Selection Sort
+- Sorts the data structure by placing new elements in the position it was in before. Uses additional array or arraylist. Uses nested for loop. Big O notation: O(n*n)
+4. Insertion Sort
+- Sorts a data structure by "inserting" different elements into specific indexes where the value is snapshotted to be smaller than the earlier compared one. Big O notation: O(n*n)
+## So, what Sort is the best? Analytical Analysis
+
+When considering the best Sort, I threw out high and low. I also used 5000 elements for each sort, run consecutively 12 times, and the swaps, comparisons, and time elapsed (in nanoseconds) averaged (divided by 10 to throw out the high and low). 
+
+Here is one of my tests ([run here on Replit](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge3/Challenge3.java)):
+
+![image 1](https://cdn.discordapp.com/attachments/692775247749054605/960486369694711898/Screen_Shot_2022-04-04_at_3.29.23_AM.png)
+![image 2](https://cdn.discordapp.com/attachments/692775247749054605/960486388745261076/Screen_Shot_2022-04-04_at_3.29.29_AM.png)
+
+In this case, we can see that Merge Sort is by far the winner. It's timeElapsed is on a whole different level compared to the three other sorts. This is because the other three algorithms are linear based, while Merge Sort is divide and conquer binary based.
+
+Here is a table showing the Big O complexity to give us more room to decide:
+
+![complexity table](https://cdn.discordapp.com/attachments/692775247749054605/960487260522967050/Screen_Shot_2022-04-04_at_3.33.10_AM.png)
+
+I wrote about this in my notes above as well; however, this table is great to see best/average/worst possibilties in terms of big O notation.
+
+And therefore, after considering all of these - including analytics (swaps, comparisons, time elapsed), as well as big O notation and time complexity, *Merge Sort is the winner.* I definitely think out of these four, Merge Sort is definitely the most sophisticated and more efficient algorithms. 
 ### **Week 2**
 * [Problem Solutions](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge2/imports/Calculator.java)
 * Code Snippets:
