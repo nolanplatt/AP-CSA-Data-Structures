@@ -22,6 +22,7 @@ public class Challenge3 {
         
         Scanner scan = new Scanner(System.in);  
 
+        // prompt user
         System.out.println("-------------------------\n");
         System.out.println("Data Structures  Challenge 3");
         System.out.println("Select an Option...");
@@ -30,13 +31,13 @@ public class Challenge3 {
         int option;
         option = scan.nextInt(); 
 
-        if(option == 1) {
+        if(option == 1) { // no other option - simply a prompt
             int bubbleSortSwapTotal = 0;
             int bubbleSortComparisonTotal = 0;
             int bubbleSortSpeedTotal = 0;
           for(int i = 0; i < 12; i++) { // Bubble Sort
                 BubbleSort bubbleSort = new BubbleSort();
-                bubbleSortSwapTotal += bubbleSort.getNumSwaps();
+                bubbleSortSwapTotal += bubbleSort.getNumSwaps(); 
                 bubbleSortComparisonTotal += bubbleSort.getNumComparisons();
                 bubbleSortSpeedTotal += bubbleSort.getTimeElapsed();
           }
@@ -114,20 +115,21 @@ public class Challenge3 {
 }
 
 class BubbleSort {
+    // member variables
     int size;
     int numComparisons;
     int numSwaps;
     Duration timeElapsed;
     
-    BubbleSort() {
+    BubbleSort() { // constructor
          size = 0;
          numComparisons = 0;
          numSwaps = 0;
         AdvancedArrayList<Integer> aal = new AdvancedArrayList<>(10, 0);
 
-        while(size < 5001) {
+        while(size < 5001) { // initialize AAL
         int num = 60 + (int) (Math.random() * 400000);
-
+            // random number 60 to 400000 to avoid repeats / mixed data
          aal.add(num);
          size++;
     }
@@ -135,14 +137,14 @@ class BubbleSort {
     boolean sorted = false;
     Instant start = Instant.now();
     while(!sorted) {
-    for (int i = 0; i < aal.size() - 1; i++) {
-        for (int j = 0; j < aal.size() - 1 - i; j++) {
-            numComparisons++;
-            if (aal.get(j) > aal.get(j + 1)) {
-                int temp = aal.get(j);
-                aal.set(j, aal.get(j + 1));
-                aal.set(j + 1, temp);
-                numSwaps++;
+    for (int i = 0; i < aal.size() - 1; i++) { // original loop
+        for (int j = 0; j < aal.size() - 1 - i; j++) { // nested (secondary) loop
+            numComparisons++; // add to comparison counter
+            if (aal.get(j) > aal.get(j + 1)) { // check if original > nested + 1
+                int temp = aal.get(j); // initialize temp (to avoid setting equal twice)
+                aal.set(j, aal.get(j + 1)); // swap
+                aal.set(j + 1, temp); // swap back
+                numSwaps++; // add to swaps counter
                 sorted = true;
             }
         }
@@ -150,8 +152,8 @@ class BubbleSort {
     }
 
     // Start Bubble Sort
-    Instant done = Instant.now();
-    timeElapsed = Duration.between(start, done);
+    Instant done = Instant.now(); // end timer
+    timeElapsed = Duration.between(start, done); // find difference in nanoseconds
     
 }
 
@@ -169,6 +171,7 @@ int getTimeElapsed() {
 }
 
 class SelectionSort{
+    // member variables
     int size;
     int numComparisons;
     int numSwaps;
@@ -179,29 +182,29 @@ class SelectionSort{
         numSwaps = 0;
        AdvancedArrayList<Integer> aal = new AdvancedArrayList<>(10, 0);
 
-       while(size < 5001) {
-       int num = 60 + (int) (Math.random() * 400000);
+       while(size < 5001) { // initialize AAL
+       int num = 60 + (int) (Math.random() * 400000); // random num 60 to 40000 ( avoids mixed/repeated data)
 
         aal.add(num);
         size++;
     }
     // Start Selection Sort
-    Instant start = Instant.now();
-    for (int j = 0; j < aal.size() - 1; j++) {
+    Instant start = Instant.now(); // starts timer
+    for (int j = 0; j < aal.size() - 1; j++) { // original loop
         int smaller = j;
-        for (int k = j + 1; k < aal.size(); k++) {
+        for (int k = j + 1; k < aal.size(); k++) { // nested (secondary) loop
             if (aal.get(k) < aal.get(smaller)) {
-                numComparisons++;
+                numComparisons++; // add to comparisons counter
                 smaller = k;
             }
         }
-        int temp = aal.get(smaller);
-        aal.set(smaller, aal.get(j));
-        aal.set(j, temp);
+        int temp = aal.get(smaller); // initialize temp
+        aal.set(smaller, aal.get(j)); // swap
+        aal.set(j, temp); // swap back
         numSwaps++;
     }
-    Instant done = Instant.now();
-    timeElapsed = Duration.between(start, done);
+    Instant done = Instant.now(); // end timer
+    timeElapsed = Duration.between(start, done); // find difference in nanoseconds
    
 
     }
@@ -218,6 +221,7 @@ class SelectionSort{
 }
 
 class InsertionSort {
+    // member variables
     int size;
     int numComparisons;
     int numSwaps;
@@ -228,38 +232,38 @@ class InsertionSort {
         numSwaps = 0;
        AdvancedArrayList<Integer> aal = new AdvancedArrayList<>(10, 0);
 
-       while(size < 5001) {
-       int num = 60 + (int) (Math.random() * 400000);
+       while(size < 5001) { // initialize AAL
+       int num = 60 + (int) (Math.random() * 400000); // random num 60 to 40000 ( avoids mixed/repeated data)
 
         aal.add(num);
         size++;
     }
     
     // Start Insertion Sort
-    Instant start = Instant.now();
+    Instant start = Instant.now(); // starts timer
 
-    for(int i = 1; i < aal.size(); i++){
+    for(int i = 1; i < aal.size(); i++){ // original loop
         int check = aal.get(i);
-        for(int j = i - 1 ; j >= 0; j--){
-            if(check < aal.get(j)){
-                numComparisons++;
-                aal.set(j + 1, aal.get(j));
-                numSwaps++;
-                if(j == 0){
-                    numComparisons++;
-                    aal.set(0, check);
-                    numSwaps++;
+        for(int j = i - 1 ; j >= 0; j--){ // nested (secondary) loop
+            if(check < aal.get(j)){ // comparison
+                numComparisons++;  // adds to comparison counter
+                aal.set(j + 1, aal.get(j)); // swap
+                numSwaps++; // add to swap counter
+                if(j == 0){ // comparison
+                    numComparisons++; // adds to comparison counter
+                    aal.set(0, check); // swap again
+                    numSwaps++; // add to swap counter
                 }
             } 
-            else{
+            else{ // comparison
                 numComparisons++;
-                aal.set(j + 1, check);
+                aal.set(j + 1, check); // secondary swap if needbe 
                 break;
             }
         }
     }
-    Instant done = Instant.now();
-    timeElapsed = Duration.between(start, done);
+    Instant done = Instant.now(); // end timer
+    timeElapsed = Duration.between(start, done); // find different in nanoseconds
    
 }
 
@@ -276,6 +280,7 @@ int getTimeElapsed() {
 }
 
 class MergeSort {
+    // member variables
     int size;
     int numComparisons;
     int numSwaps;
@@ -287,80 +292,80 @@ class MergeSort {
         numSwaps = 0;
        aal = new AdvancedArrayList<>(10, 0);
 
-       while(size < 5001) {
-       int num = 60 + (int) (Math.random() * 400000);
+       while(size < 5001) { // initialize AAL
+       int num = 60 + (int) (Math.random() * 400000); // random num 60 to 400000 ( avoids mixed / repeated data)
 
         aal.add(num);
         size++;
     }
     
     // Start Insertion Sort
-    Instant start = Instant.now();
+    Instant start = Instant.now(); // starts timer
 
 
     // divides into elements recursively and then starts merge sort in its primary method
-    divideIntoElements(0, aal.size() - 1);
+    divideIntoElements(0, aal.size() - 1); // divides
    
    
     
-    Instant done = Instant.now();
-    timeElapsed = Duration.between(start, done);
+    Instant done = Instant.now(); // ends timer
+    timeElapsed = Duration.between(start, done); // finds difference in nanoseconds
 
    
 }
 
 public void mergeIntoElements(int indS, int indM, int indE) {
 
-    ArrayList<Integer> temp = new ArrayList<>();
+    ArrayList<Integer> temp = new ArrayList<>(); // creates temporary arraylist
 
-    int leftPeek = indS;
-    int rightPeek = indE + 1;
+    int leftPeek = indS; // finds left merge
+    int rightPeek = indE + 1; // finds right merge
 
-    while (leftPeek <= indM && rightPeek <= indE) {
+    while (leftPeek <= indM && rightPeek <= indE) { // while left merge <= starting middle and right merge < end
         numComparisons++;
         if (aal.get(leftPeek) <= aal.get(rightPeek)) {
-            numComparisons++;
-            temp.add(aal.get(leftPeek));
+            numComparisons++; // add to comparisons
+            temp.add(aal.get(leftPeek)); // add left peek to temporary arraylist
             leftPeek++;
 
         } else {
-            numComparisons++;
-            temp.add(aal.get(rightPeek));
+            numComparisons++; // add to comparisons
+            temp.add(aal.get(rightPeek)); // add to temporary arraylist ( right peek )
             rightPeek++;
 
         }
     }
 
     while (leftPeek <= indM) {
-        numComparisons++;
-        temp.add(aal.get(leftPeek));
+        numComparisons++; // add to comparisons
+        temp.add(aal.get(leftPeek)); // add to temporary arraylist (leftPek)
         leftPeek++;
     }
 
     while (rightPeek <= indE) {
-        numComparisons++;
-        temp.add(aal.get(rightPeek));
+        numComparisons++; // add to comparisons
+        temp.add(aal.get(rightPeek)); // add to temporary arraylist ( right peek )
         rightPeek++;
     }
 
 
     for (int i = 0; i < temp.size(); indS++) {
-        numSwaps++;
-        aal.set(indS, temp.get(i++));
+        numSwaps++; // add to swap counter
+        aal.set(indS, temp.get(i++)); // swap
 
     }
 
 }
 
 
-    void divideIntoElements(int indS, int indE) {
+    void divideIntoElements(int indS, int indE) { // recursively divides
 
     if (indS < indE && (indE - indS) >= 1) {
-        numComparisons++;
-        int mElement = (indE + indS) / 2;
-        divideIntoElements(indS, mElement);
-        divideIntoElements(mElement + 1, indE);
-        mergeIntoElements(indS, mElement, indE);
+        numComparisons++; // adds to comparisons
+        int mElement = (indE + indS) / 2; // finds element integer
+        divideIntoElements(indS, mElement); // divides starting and middle
+        divideIntoElements(mElement + 1, indE); // divides middle + 1 and ending
+        mergeIntoElements(indS, mElement, indE); // merges starting, middle & end ( after all 3 finished )
     }
 }
 

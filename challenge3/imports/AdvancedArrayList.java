@@ -37,41 +37,41 @@ public class AdvancedArrayList <E> {
 
     public String add (E object) {
         if(size == elementData.length)
-            allocateCapacity();
-        elementData[size++] = object;
+            allocateCapacity(); // ensures capacity exists
+        elementData[size++] = object; // adds size++ and sets it to new object E
         return "Successfully added object:  " + object + " with new size: " + size;
     } 
 
     public E get (int index) {
         if(index > size || index < 0)
-            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL.");
-        return (E) elementData[index];
+            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL."); // indexoutofbounds catch
+        return (E) elementData[index]; // returns element @ index provided
     }
     public E set(int index, E e) {
         if(index > size || index < 0)
-            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL.");
-        E oldSnapShot = (E) elementData[index];
+            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL."); // indexoutofbounds catch
+        E oldSnapShot = (E) elementData[index]; // sets to object E
         elementData[index] = e;
         return oldSnapShot;
     }
 
     public E remove (int index) {
         if(index > size || index < 0)
-            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL.");
+            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL."); // indexoutofbounds catch
     
-        E val = (E) elementData[index];
+        E val = (E) elementData[index]; // gets current value @ index
 
-        for(int i = index; i < size; i ++) {
-            elementData[i] = elementData[i + 1];
+        for(int i = index; i < size; i ++) { // loops through AAL, starting w/ provided index
+            elementData[i] = elementData[i + 1]; // moves each element one spot to right
         }
         // -- >
-            size--;
+            size--; // decreases size by 1 to ensure no loss
         return val;
     }
 
-    public E peek () {
-        E val = (E) elementData[0];
-        return val;
+    public E peek () { // peeks initial (n=0, index=0) value of AAL
+        E val = (E) elementData[0]; // gets object
+        return val; // returns
     }
   
 }
