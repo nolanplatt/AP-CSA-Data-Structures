@@ -47,6 +47,13 @@ public class AdvancedArrayList <E> {
             throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL.");
         return (E) elementData[index];
     }
+    public E set(int index, E e) {
+        if(index > size || index < 0)
+            throw new IndexOutOfBoundsException("Size must be > 0 and less than the size of the AAL.");
+        E oldSnapShot = (E) elementData[index];
+        elementData[index] = e;
+        return oldSnapShot;
+    }
 
     public E remove (int index) {
         if(index > size || index < 0)
