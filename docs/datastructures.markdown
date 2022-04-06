@@ -69,8 +69,9 @@ This week, I deeply progressed my understanding of data structures and how they 
 
 * Key Learnings In Week 1:
 During this week's challenges, I learned much more about Queues/LinkedLists, Stacks, and how they fit into the OOP paradgim. Before this week, I never really considered or thought about how data structures are literally crucial to the usage of algorithms. During this challenge, I used several algorithms with my data structures. This can be seen in some of my code snippets above. I believe one of my biggest takeaways from this challenge is the usage of a Stack to reverse a Queue. I've known how queues work (push and pop), but never really thought how those could be used with Queues for the purpose of reversing one - or even normalizing a Queue if it's already reversed. It opened my eyes on how, when we're working with data structures, we need to look at it intuitively rather than objectively; if we look at it objectively, we will fail to see other data structures (like Stacks) that we can use to easily meet our task.
-### **Week 0**
+
+### **Week 0** 
 * [Problem Solutions](https://github.com/nolanplatt/AP-CSA-Data-Structures/tree/main/challenge0)
-* [Code Snippet(s)](https://github.com/nolanplatt/AP-CSA-Data-Structures/blob/main/challenge0/imports/Swap.java#L8-L24)
+* ![stack](https://imgur.com/04dcEoX)
 * [Replit Runtime](https://replit.com/@nolanplatt/AP-CSA-Data-Structures#challenge0/Main.java)
 * [Review Issue](https://github.com/rpeddakama/AP-CSA-T3/issues/4)
