@@ -124,6 +124,7 @@ class BubbleSort {
     int numComparisons;
     int numSwaps;
     Duration timeElapsed;
+    int timeElapsedAsNano;
     
     BubbleSort() { // constructor
          size = 0;
@@ -159,6 +160,7 @@ class BubbleSort {
     Instant done = Instant.now(); // end timer
     timeElapsed = Duration.between(start, done); // find difference in nanoseconds
     
+         timeElapsedAsNano = Math.abs(timeElapsed.getNano());
 }
 
 int getNumComparisons() {
@@ -168,9 +170,9 @@ int getNumSwaps() {
     return numSwaps;
 }
 int getTimeElapsed() {
-    return timeElapsed.getNano();
+    return timeElapsedAsNano;
+    
 }
-
 
 }
 
