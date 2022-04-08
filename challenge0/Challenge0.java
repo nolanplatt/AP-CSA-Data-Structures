@@ -39,7 +39,13 @@ public class Challenge0 {
         if(option == 1) {
             Swap swap = new Swap();
         } else if (option == 2){
-            Matrix matrix = new Matrix();
+            Matrix m0 = new Matrix(keypad());
+            System.out.println("Keypad:");
+            System.out.println(m0);
+    
+            Matrix m1 = new Matrix(numbers());
+            System.out.println("Numbers Systems:");
+            System.out.println(m1);
         } else {
             System.exit(0);
         }
@@ -47,6 +53,17 @@ public class Challenge0 {
              
 
         
+    }
+
+    
+    static int[][] keypad() {
+        return new int[][]{ { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, {-1, 0, -1} };
+    }
+
+    static int[][] numbers() {
+        return new int[][]{ { 0, 1 },
+                { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 } };
     }
 
 }

@@ -3,16 +3,25 @@ package challenge0.imports;
 import java.util.Scanner;
 
 public class Matrix {
+    private final int[][] matrix;
 
-    public Matrix() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("-------------------------\n");
-        System.out.println("Need matrix...");
-        System.out.println("-------------------------\n");
-
-        String matrix = scan.nextLine();
-        System.out.println("Formatted Matrix->");
-        System.out.println(matrix);
+    // store matrix
+    public Matrix(int[][] matrix) {
+        this.matrix = matrix;
     }
-   
+  
+
+    // Hack: create toString method using nested for loops to format output of a matrix
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (int[] row : matrix) { // Enhanced for loop through matrix via rows
+            for (int cell : row) { // Another enhanced for loop for the cell
+                result.append((cell==-1) ? " " : String.format("%x", cell)).append(" "); // Append cell to result StringBuilder
+            }
+            result.append("\n"); // Create new line via %n
+        }
+        return result.toString(); // Return converted matrix
+    }
+
 }
