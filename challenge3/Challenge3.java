@@ -84,6 +84,7 @@ public class Challenge3 {
       System.out.println("Average numSwaps: " + bubbleSortSwapTotal / 10);
       System.out.println("Average numComparisons: " + bubbleSortComparisonTotal / 10);
       System.out.println("Average speed (ns): " + bubbleSortSpeedTotal / 10);
+      System.out.println("Average speed (s):" + bubbleSortSpeedTotal / 1000000000.0);
       
 
       System.out.println("-------------------------\n");
@@ -92,6 +93,7 @@ public class Challenge3 {
       System.out.println("Average numSwaps: " + selectionSortSwapTotal / 10);
       System.out.println("Average numComparisons: " + selectionSortComparisonTotal / 10);
       System.out.println("Average speed (ns): " + selectionSortSpeedTotal / 10);
+      System.out.println("Average speed (s):" + selectionSortSpeedTotal / 1000000000.0);
 
 
       System.out.println("-------------------------\n");
@@ -100,6 +102,7 @@ public class Challenge3 {
       System.out.println("Average numSwaps: " + insertionSortSwapTotal / 10);
       System.out.println("Average numComparisons: " + insertionSortComparisonTotal / 10);
       System.out.println("Average speed (ns): " + insertionSortSpeedTotal / 10);
+      System.out.println("Average speed (s):" + insertionSortSpeedTotal / 1000000000.0);
 
       System.out.println("-------------------------\n");
       System.out.println("Merge Sort");
@@ -107,6 +110,7 @@ public class Challenge3 {
       System.out.println("Average numSwaps: " + mergeSortSwapTotal / 10);
       System.out.println("Average numComparisons: " + mergeSortComparisonTotal / 10);
       System.out.println("Average speed (ns): " + mergeSortSpeedTotal / 10);
+      System.out.println("Average speed (s):" + mergeSortSpeedTotal / 1000000000.0);
 
         }
         
