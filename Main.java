@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 import challenge0.Challenge0;
 import challenge1.Challenge1;
@@ -8,13 +9,16 @@ import challenge3.Challenge3;
 public class Main {
     public static void main(String[] args) {
 
+       ArrayList<String> submenus;
+        submenus = new ArrayList<String>();
+        submenus.add("Challenge 0");
+        submenus.add("Challenge 1");
+        submenus.add("Challenge 2");
+        submenus.add("Challenge 13");
 
-      try {
-                Scanner scan = new Scanner(System.in);  
-      } catch IOException {
-        System.out.println("Exception Error")
-      }
 
+        Scanner scan = new Scanner(System.in);  
+      
 
         System.out.println("-------------------------\n");
         System.out.println("Choose from these choices");
