@@ -7,7 +7,13 @@ import challenge3.Challenge3;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);  
+
+
+      try {
+                Scanner scan = new Scanner(System.in);  
+      } catch IOException {
+        System.out.println("Exception Error")
+      }
 
 
         System.out.println("-------------------------\n");
