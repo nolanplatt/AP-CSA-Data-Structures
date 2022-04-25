@@ -6,6 +6,7 @@ permalink: /frqs
 
 # MCQ Results
 ## 4/19: 2015 Practice Exam MCQ
+![Score Tangible](https://i.imgur.com/6LVG91C.png)
 Score: 33/39
 Corrections:
 
