@@ -5,6 +5,14 @@ permalink: /tpt
 {% include navigation.md %}
 # Test Prep (TPT) Plan
 
+# Test Plan:
+
+1. Monday: I will review each Unit's main points and ideas. I will take brief notes on each unit to prepare myself for an MCQ practice on Tuesday.
+2. Tuesday: I will do a practice MCQ for the entire course (30 MCQ). I will note which questions I either got wrong, struggled with, or even guessed and got right. If I am confused by any of the questions I will note them down to ask on Wednesday.
+3. Wednesday: I will do a practice FRQ from a previous year. No outside help or electronics. I will set timer for College Board's time. At the end, I will score my FRQs, correct them, and then understand what I got wrong.
+4. Thursday: I will do MCQs for each unit in AP classroom. Each unit has a practice MCQ (~10 questions wrong), will do one for each unit and review what I got wrong.
+5. Friday: At the end of the week, I will add to my journal big ideas that I learned throughout the week, along with my compiled/graded scores and corrections.
+ 
 ## Studying
 Each week of this trimester before the AP exam, I will be reviewing some College Board topic.\
 To illustrate, College Board has many topic videos, practice questions/FRQs, MCQs, etc. I will be practicing at least one of these every week.\
